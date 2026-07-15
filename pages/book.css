@@ -515,10 +515,10 @@ p { margin-bottom: 0.5em; }
   border-top: 0.04in solid var(--ink);
   background: var(--green-deep);
   color: var(--paper);
-  padding: 0.2in 0.6in;
+  padding: 0.2in 0.6in 0.15in;
   display: flex;
   flex-direction: column;
-  gap: 0.15in;
+  gap: 0.12in;
   position: relative;
   z-index: 3;
 }
@@ -559,6 +559,40 @@ p { margin-bottom: 0.5em; }
   font-weight: 700;
   color: var(--paper);
   font-style: italic;
+}
+.cover-author {
+  font-family: var(--serif);
+  font-size: 11pt;
+  font-style: italic;
+  color: var(--gold);
+  text-align: center;
+  margin: 0.05in 0;
+}
+.cover-author strong {
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.cover-legal {
+  font-family: var(--sans);
+  font-size: 6pt;
+  line-height: 1.45;
+  color: var(--paper);
+  opacity: 0.55;
+  text-align: center;
+  margin-top: 0.12in;
+  padding-top: 0.12in;
+  border-top: 0.01in solid rgba(196, 153, 97, 0.3);
+  letter-spacing: 0.02em;
+}
+.cover-edition {
+  display: inline-block;
+  margin-top: 0.04in;
+  font-size: 6pt;
+  font-style: italic;
+  color: var(--gold);
+  opacity: 0.7;
+  letter-spacing: 0.08em;
 }
 
 /* === HALF-TITLE === */
