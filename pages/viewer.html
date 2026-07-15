@@ -63,14 +63,16 @@
   <button onclick="prev()">‹ Prev</button>
   <button onclick="next()">Next ›</button>
   <button onclick="random()">🎲 Random</button>
-  <a href="01-cover.html" target="_blank">Open Cover ↗</a>
+  <a href="00-back-cover.html" target="_blank">Back Cover ↗</a>
+  <a href="01-cover.html" target="_blank">Front Cover ↗</a>
 </div>
 <iframe id="bookFrame" src="01-cover.html"></iframe>
 <script>
 let currentPage = 1;
 function getPageName(n) {
   const nn = String(n).padStart(2, '0');
-  // First three are special
+  // Page 0 is the back cover; the first three are also special
+  if (n === 0) return '00-back-cover.html';
   if (n === 1) return '01-cover.html';
   if (n === 2) return '02-halftitle.html';
   if (n === 3) return '03-contents.html';
