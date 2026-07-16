@@ -422,45 +422,6 @@ p { margin-bottom: 0.5em; }
   border-bottom: 0.02in solid var(--ink);
   padding-bottom: 0.12in;
 }
-.cover-imprint-meta {
-  font-family: var(--sans);
-  font-size: 7pt;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  color: var(--ink-mute);
-  text-transform: uppercase;
-  text-align: right;
-  padding-top: 0.06in;
-}
-.cover-mark {
-  display: block;
-  margin: 0 auto 0.18in;
-  position: relative;
-}
-.cover-mark svg {
-  display: block;
-  margin: 0 auto;
-}
-.cover-quote {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 11pt;
-  color: var(--ink-soft);
-  text-align: center;
-  margin: 0.25in auto 0.18in;
-  max-width: 4in;
-  line-height: 1.45;
-}
-.cover-quote-attr {
-  display: block;
-  font-style: normal;
-  font-family: var(--sans);
-  font-size: 8pt;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  margin-top: 0.05in;
-}
 
 .cover-main {
   flex: 1;
