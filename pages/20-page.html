@@ -17,39 +17,70 @@
   </div>
   <div>
     <svg viewBox="0 0 200 200" style="width: 60%; display: block; margin: 0 auto;" xmlns="http://www.w3.org/2000/svg">
-  <!-- White circle (flat, no gradient) -->
-  <circle cx="50" cy="50" r="48" fill="#ffffff" stroke="#1a1612" stroke-width="2.5"/>
+  <defs>
+    <clipPath id="ballClip">
+      <circle cx="50" cy="50" r="46"/>
+    </clipPath>
+    <!-- La ola wave path: a smooth S-curve used for the surface decoration -->
+    <path id="olaWave" d="M0,0 q5,-4 10,0 t10,0 t10,0 t10,0" />
+  </defs>
 
-  <!-- 5 visible black pentagons (front face of truncated icosahedron) -->
-  <g fill="#1a1612" stroke="#1a1612" stroke-width="1" stroke-linejoin="round">
-    <!-- Centre pentagon (largest) -->
-    <polygon points="50,38 64,50 58,68 42,68 36,50"/>
-    <!-- Top-left pentagon -->
-    <polygon points="28,30 40,28 44,42 36,50 26,44"/>
-    <!-- Top-right pentagon -->
-    <polygon points="72,30 60,28 56,42 64,50 74,44"/>
-    <!-- Bottom-left pentagon -->
-    <polygon points="30,70 42,68 44,82 32,86 24,78"/>
-    <!-- Bottom-right pentagon -->
-    <polygon points="70,70 58,68 56,82 68,86 76,78"/>
+  <!-- White base -->
+  <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#1a1612" stroke-width="2.5"/>
+
+  <!-- Everything inside is clipped to the ball circle -->
+  <g clip-path="url(#ballClip)">
+
+    <!-- Red triangular panel (top) — inspired by Canada + US flag red -->
+    <!-- Triangle vertices: top, center, mid-right. Curved wavy edge. -->
+    <path d="M 50,4
+             C 56,18 62,28 70,30
+             C 64,40 56,46 50,50
+             C 44,46 36,40 30,30
+             C 38,28 44,18 50,4 Z"
+          fill="#c44536" stroke="#1a1612" stroke-width="1" stroke-linejoin="round"/>
+
+    <!-- Green triangular panel (bottom-left) — inspired by Mexico flag green -->
+    <path d="M 8,68
+             C 18,64 28,62 32,60
+             C 40,64 46,56 50,50
+             C 50,62 50,72 50,86
+             C 40,84 26,82 16,82
+             C 10,78 6,74 8,68 Z"
+          fill="#1f4d3a" stroke="#1a1612" stroke-width="1" stroke-linejoin="round"/>
+
+    <!-- Blue triangular panel (bottom-right) — inspired by US flag blue -->
+    <path d="M 92,68
+             C 82,64 72,62 68,60
+             C 60,64 54,56 50,50
+             C 50,62 50,72 50,86
+             C 60,84 74,82 84,82
+             C 90,78 94,74 92,68 Z"
+          fill="#1e3a5f" stroke="#1a1612" stroke-width="1" stroke-linejoin="round"/>
+
+    <!-- La ola wave lines in each colored panel (subtle texture) -->
+    <g stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.55">
+      <!-- In red panel -->
+      <path d="M 36,18 q4,-3 8,0 t8,0 t8,0"/>
+      <path d="M 38,26 q3,-2 6,0 t6,0 t6,0"/>
+      <!-- In green panel -->
+      <path d="M 18,72 q4,-2 8,0 t8,0 t8,0"/>
+      <path d="M 22,78 q3,-2 6,0 t6,0 t6,0"/>
+      <!-- In blue panel -->
+      <path d="M 62,72 q4,-2 8,0 t8,0 t8,0"/>
+      <path d="M 66,78 q3,-2 6,0 t6,0 t6,0"/>
+    </g>
+
+    <!-- Center triangle where the 4 panels meet (white, the "negative" of the central design) -->
+    <polygon points="50,42 60,52 50,62 40,52"
+             fill="#ffffff" stroke="#1a1612" stroke-width="1.2" stroke-linejoin="round"/>
+
+    <!-- Subtle highlight to give 3D feel (top-left) -->
+    <ellipse cx="34" cy="30" rx="12" ry="6" fill="#ffffff" opacity="0.35" transform="rotate(-30 34 30)"/>
   </g>
 
-  <!-- Stitching: thin black lines from each pentagon to its neighbours -->
-  <g stroke="#1a1612" stroke-width="1" fill="none" stroke-linecap="round">
-    <!-- centre to top corners -->
-    <line x1="50" y1="38" x2="40" y2="28"/>
-    <line x1="50" y1="38" x2="60" y2="28"/>
-    <!-- centre to sides -->
-    <line x1="36" y1="50" x2="26" y2="44"/>
-    <line x1="64" y1="50" x2="74" y2="44"/>
-    <!-- centre to bottom -->
-    <line x1="42" y1="68" x2="32" y2="86"/>
-    <line x1="58" y1="68" x2="68" y2="86"/>
-    <!-- around the top -->
-    <line x1="40" y1="28" x2="60" y2="28"/>
-    <!-- around the bottom -->
-    <line x1="32" y1="86" x2="68" y2="86"/>
-  </g>
+  <!-- Outer ring (re-stroke on top of clip for clean edge) -->
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#1a1612" stroke-width="2.5"/>
 </svg>
     <div class="diagram" style="margin-top: 0.15in;">
       <div class="kicker" style="text-align: center; margin-bottom: 0.1in;">Ball spec card</div>
