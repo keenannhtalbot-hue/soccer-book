@@ -91,12 +91,12 @@ function prev() {
   document.getElementById('bookFrame').src = getPageName(currentPage);
 }
 function next() {
-  currentPage = Math.min(200, currentPage + 1);
+  currentPage = Math.min(225, currentPage + 1);
   document.getElementById('pageInput').value = currentPage;
   document.getElementById('bookFrame').src = getPageName(currentPage);
 }
 function random() {
-  const n = Math.floor(Math.random() * 201);
+  const n = Math.floor(Math.random() * 226);
   currentPage = n;
   document.getElementById('pageInput').value = n;
   document.getElementById('bookFrame').src = getPageName(n);
