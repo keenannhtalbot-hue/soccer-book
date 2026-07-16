@@ -17,74 +17,39 @@
   </div>
   <div>
     <svg viewBox="0 0 200 200" style="width: 60%; display: block; margin: 0 auto;" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="ballSphere" cx="35%" cy="30%" r="75%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="55%" stop-color="#f8f3e3"/>
-      <stop offset="100%" stop-color="#c9bd94"/>
-    </radialGradient>
-    <radialGradient id="ballShadow" cx="50%" cy="50%" r="50%">
-      <stop offset="60%" stop-color="rgba(0,0,0,0)"/>
-      <stop offset="100%" stop-color="rgba(0,0,0,0.35)"/>
-    </radialGradient>
-  </defs>
+  <!-- White circle (flat, no gradient) -->
+  <circle cx="50" cy="50" r="48" fill="#ffffff" stroke="#1a1612" stroke-width="2.5"/>
 
-  <!-- Outer shadow -->
-  <ellipse cx="103" cy="108" rx="86" ry="86" fill="#1a1612" opacity="0.18"/>
-
-  <!-- Sphere base -->
-  <circle cx="100" cy="100" r="84" fill="url(#ballSphere)" stroke="#1a1612" stroke-width="1.5"/>
-
-  <!-- White hexagons around the centre (background panels, drawn first so pentagons sit on top) -->
-  <g fill="#ffffff" stroke="#1a1612" stroke-width="1.3" stroke-linejoin="round">
-    <!-- top hexagon -->
-    <polygon points="100,40 124,55 124,80 100,95 76,80 76,55"/>
-    <!-- upper-left hexagon -->
-    <polygon points="50,70 74,85 74,110 50,125 26,110 26,85"/>
-    <!-- upper-right hexagon -->
-    <polygon points="150,70 174,85 174,110 150,125 126,110 126,85"/>
-    <!-- lower-left hexagon -->
-    <polygon points="60,135 84,150 84,165 60,168 36,155 36,135"/>
-    <!-- lower-right hexagon -->
-    <polygon points="140,135 164,150 164,165 140,168 116,155 116,135"/>
+  <!-- 5 visible black pentagons (front face of truncated icosahedron) -->
+  <g fill="#1a1612" stroke="#1a1612" stroke-width="1" stroke-linejoin="round">
+    <!-- Centre pentagon (largest) -->
+    <polygon points="50,38 64,50 58,68 42,68 36,50"/>
+    <!-- Top-left pentagon -->
+    <polygon points="28,30 40,28 44,42 36,50 26,44"/>
+    <!-- Top-right pentagon -->
+    <polygon points="72,30 60,28 56,42 64,50 74,44"/>
+    <!-- Bottom-left pentagon -->
+    <polygon points="30,70 42,68 44,82 32,86 24,78"/>
+    <!-- Bottom-right pentagon -->
+    <polygon points="70,70 58,68 56,82 68,86 76,78"/>
   </g>
 
-  <!-- Black pentagons (the iconic Adidas Telstar pattern) -->
-  <g fill="#1a1612" stroke="#1a1612" stroke-width="1.3" stroke-linejoin="round">
-    <!-- Centre pentagon (largest, most prominent) -->
-    <polygon points="100,75 124,95 113,124 87,124 76,95"/>
-    <!-- Top edge pentagon -->
-    <polygon points="100,30 118,42 110,60 90,60 82,42"/>
-    <!-- Left edge pentagon -->
-    <polygon points="35,90 53,80 65,98 56,118 38,118"/>
-    <!-- Right edge pentagon -->
-    <polygon points="165,90 147,80 135,98 144,118 162,118"/>
-    <!-- Bottom edge pentagon -->
-    <polygon points="100,170 118,158 110,140 90,140 82,158"/>
-    <!-- Lower-left pentagon (partial) -->
-    <polygon points="55,150 70,140 78,155 65,168"/>
-    <!-- Lower-right pentagon (partial) -->
-    <polygon points="145,150 130,140 122,155 135,168"/>
+  <!-- Stitching: thin black lines from each pentagon to its neighbours -->
+  <g stroke="#1a1612" stroke-width="1" fill="none" stroke-linecap="round">
+    <!-- centre to top corners -->
+    <line x1="50" y1="38" x2="40" y2="28"/>
+    <line x1="50" y1="38" x2="60" y2="28"/>
+    <!-- centre to sides -->
+    <line x1="36" y1="50" x2="26" y2="44"/>
+    <line x1="64" y1="50" x2="74" y2="44"/>
+    <!-- centre to bottom -->
+    <line x1="42" y1="68" x2="32" y2="86"/>
+    <line x1="58" y1="68" x2="68" y2="86"/>
+    <!-- around the top -->
+    <line x1="40" y1="28" x2="60" y2="28"/>
+    <!-- around the bottom -->
+    <line x1="32" y1="86" x2="68" y2="86"/>
   </g>
-
-  <!-- Stitched seams: dashed lines along the hex-pentagon boundaries -->
-  <g stroke="#1a1612" stroke-width="1" fill="none" stroke-dasharray="3 2" opacity="0.7">
-    <!-- From centre pentagon out -->
-    <line x1="100" y1="75" x2="100" y2="40"/>
-    <line x1="124" y1="95" x2="150" y2="70"/>
-    <line x1="113" y1="124" x2="140" y2="135"/>
-    <line x1="87" y1="124" x2="60" y2="135"/>
-    <line x1="76" y1="95" x2="50" y2="70"/>
-    <!-- Around the top pentagon -->
-    <line x1="100" y1="30" x2="76" y2="55"/>
-    <line x1="100" y1="30" x2="124" y2="55"/>
-  </g>
-
-  <!-- Soft shading overlay (gives 3D feel) -->
-  <circle cx="100" cy="100" r="84" fill="url(#ballShadow)" pointer-events="none"/>
-
-  <!-- Subtle highlight (top-left) -->
-  <ellipse cx="68" cy="58" rx="22" ry="14" fill="#ffffff" opacity="0.35" transform="rotate(-25 68 58)"/>
 </svg>
     <div class="diagram" style="margin-top: 0.15in;">
       <div class="kicker" style="text-align: center; margin-bottom: 0.1in;">Ball spec card</div>
