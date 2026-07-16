@@ -59,7 +59,7 @@
 <body>
 <div class="book-nav">
   <span class="label">⚽ The Soccer Book</span>
-  <input type="number" id="pageInput" min="1" max="100" value="1" onchange="goToPage()">
+  <input type="number" id="pageInput" min="0" max="200" value="1" onchange="goToPage()">
   <button onclick="prev()">‹ Prev</button>
   <button onclick="next()">Next ›</button>
   <button onclick="random()">🎲 Random</button>
@@ -80,23 +80,23 @@ function getPageName(n) {
 }
 function goToPage() {
   const n = parseInt(document.getElementById('pageInput').value);
-  if (n >= 1 && n <= 100) {
+  if (n >= 0 && n <= 200) {
     currentPage = n;
     document.getElementById('bookFrame').src = getPageName(n);
   }
 }
 function prev() {
-  currentPage = Math.max(1, currentPage - 1);
+  currentPage = Math.max(0, currentPage - 1);
   document.getElementById('pageInput').value = currentPage;
   document.getElementById('bookFrame').src = getPageName(currentPage);
 }
 function next() {
-  currentPage = Math.min(100, currentPage + 1);
+  currentPage = Math.min(200, currentPage + 1);
   document.getElementById('pageInput').value = currentPage;
   document.getElementById('bookFrame').src = getPageName(currentPage);
 }
 function random() {
-  const n = Math.floor(Math.random() * 100) + 1;
+  const n = Math.floor(Math.random() * 201);
   currentPage = n;
   document.getElementById('pageInput').value = n;
   document.getElementById('bookFrame').src = getPageName(n);
