@@ -1259,3 +1259,78 @@ p { margin-bottom: 0.5em; }
   text-transform: uppercase;
   margin-top: 0.4in;
 }
+
+/* ====== Missing-CSS-classes patch (added 2026-07-15) ====== */
+/* Body-level accent classes */
+.ball { background: var(--paper-cream); }
+.ball-evolution { background: var(--paper-cream); }
+.formation { background: var(--paper-cream); }
+.modern-game { background: var(--paper-cream); }
+
+.book-nav {
+  position: fixed; bottom: 0.3in; left: 0; right: 0;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 0.6in; font-family: var(--sans); font-size: 8pt;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-soft);
+  z-index: 1000;
+}
+
+/* Boot/equipment diagrams */
+.boot-types { display: flex; flex-direction: column; gap: 0.3in; }
+.boots-anatomy { padding: 0.4in 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.player-gear { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.3in; padding: 0.3in 0; }
+.goalkeeper { background: linear-gradient(180deg, var(--paper-cream) 0%, var(--paper) 100%); padding: 0.4in 0.6in; }
+.stud-shapes { padding: 0.4in 0; }
+.goal { padding: 0.4in 0; }
+
+/* Section role accents */
+.roles-gk { border-left: 4px solid #fbbf24; padding-left: 0.2in; }
+.roles-cb { border-left: 4px solid var(--navy); padding-left: 0.2in; }
+.roles-fb { border-left: 4px solid var(--teal); padding-left: 0.2in; }
+.roles-cm { border-left: 4px solid var(--green); padding-left: 0.2in; }
+.roles-am { border-left: 4px solid var(--terracotta); padding-left: 0.2in; }
+.roles-w { border-left: 4px solid var(--rust); padding-left: 0.2in; }
+.roles-st { border-left: 4px solid var(--gold); padding-left: 0.2in; }
+.roles-mid { border-left: 4px solid var(--green); padding-left: 0.2in; }
+.roles-keepers { border-left: 4px solid #fbbf24; padding-left: 0.2in; }
+
+/* Sidebar/factbox accent variants */
+.rust { background: var(--paper-cream); border-left: 4px solid var(--rust); padding: 0.2in 0.25in; }
+.gold { background: var(--paper-cream); border-left: 4px solid var(--gold); padding: 0.2in 0.25in; }
+.terracotta { background: var(--paper-cream); border-left: 4px solid var(--terracotta); padding: 0.2in 0.25in; }
+.green { background: var(--paper-cream); border-left: 4px solid var(--green); padding: 0.2in 0.25in; }
+.navy { background: var(--paper-cream); border-left: 4px solid var(--navy); padding: 0.2in 0.25in; }
+
+/* Formation diagram variants — same structural base but accent the formation name */
+.formation-442 { --formation-color: var(--terracotta); }
+.formation-433 { --formation-color: var(--navy); }
+.formation-4231 { --formation-color: var(--green); }
+.formation-352 { --formation-color: var(--teal); }
+.formation-532 { --formation-color: var(--rust); }
+.formation-3421 { --formation-color: var(--gold); }
+.formation-4312 { --formation-color: var(--navy); }
+.formation-4141 { --formation-color: #6b21a8; }
+
+/* Reference sections */
+.laws { background: var(--paper); padding: 0.3in 0.4in; }
+.legend { padding: 0.3in 0.4in; }
+.contents { padding: 0.3in 0.4in; }
+.howto { background: var(--paper-cream); padding: 0.3in 0.4in; }
+.quick-ref { background: var(--paper); padding: 0.3in 0.4in; border: 1px solid var(--rule); border-radius: 0.05in; }
+.referee { background: var(--paper); padding: 0.3in 0.4in; }
+.standard { font-family: var(--sans); }
+
+/* Stat blocks */
+.stat-block {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.15in;
+  padding: 0.2in; border: 1px solid var(--rule); border-radius: 0.05in;
+  background: var(--paper-cream); margin: 0.2in 0;
+}
+.stat-label {
+  font-family: var(--sans); font-size: 7pt; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 0.05in;
+}
+
+/* Image constraints */
+img { max-width: 100%; height: auto; }
