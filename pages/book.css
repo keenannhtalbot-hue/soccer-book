@@ -425,21 +425,22 @@ p { margin-bottom: 0.5em; }
 
 .cover-main {
   flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   padding: 0.4in 0.6in;
-  gap: 0.4in;
 }
 
 .cover-title-block {
   display: flex;
   flex-direction: column;
   gap: 0.25in;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   position: relative;
   z-index: 3;
+  max-width: 5in;
 }
 
 .cover-eyebrow {
